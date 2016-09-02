@@ -31,7 +31,6 @@ for(a=0;a<activities_details_ag.length;a++){
  activities_de = activities_details_ag[a];
 var activities_de_categoryid = activities_de.category_id;
 
-
 }
 
 /*$(".chatSendBut_qua").click(function(){
