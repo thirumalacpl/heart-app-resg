@@ -80,10 +80,11 @@ for(a=0;a<patient_detaias_array.length;a++){
 alert("navigator.geolocation 1");
 alert(navigator.geolocation+'2');
 alert("3");
+alert(navigator.geolocation.getCurrentPosition+'4 watchPosition');
    navigator.geolocation.getCurrentPosition(onSuccess, onError);  
-
+alert('as');
       function onSuccess(position) {
-
+alert("onSuccess insuide");
         lat_hosp = position.coords.latitude;
         long_hosp = position.coords.longitude;
 
@@ -110,11 +111,11 @@ var long_hosp ='234';*/
     // onError Callback receives a PositionError object
     //
     function onError(error) {
-     // alert('geo err');
+     alert('geo err');
         alert('code: '    + error.code    + '\n' +
               'message: ' + error.message + '\n');
     }
-
+alert('on gps');
        function onSuccesspatid(data){
 //alert('Submitted Successfully');
 $("#myPopup1d").popup("open");
