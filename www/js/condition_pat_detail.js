@@ -112,8 +112,8 @@ var watchGeo=null;
         lat_hosp = position.coords.latitude;
         long_hosp = position.coords.longitude;
 
-alert(lat_hosp+'lat_hosp');
-alert(long_hosp+'long_hosp');
+alert(lat_hosp+'lat_hosp t');
+alert(long_hosp+'long_hosp t');
 
 /*var lat_hosp ='89';
 var long_hosp ='234';*/
