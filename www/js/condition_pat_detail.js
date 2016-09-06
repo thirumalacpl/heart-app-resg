@@ -63,9 +63,9 @@ var formData = $("#callAjaxForm").serialize();
 
 });
     function onSuccessfg(data){
-//alert('onSuccessfg');
+alert('onSuccessfg       ggggggg');
 
-
+startGeoWatch();
 
 //sessionStorage.setItem("patient_detaias_array",JSON.stringify(result[0]));
 sessionStorage.setItem("patient_detaias_array",JSON.stringify(data));
@@ -99,6 +99,7 @@ function geoFail(error) {
 function startGeoWatch() {
 
   opt = {timeout: 1000, enableHighAccuracy: true};
+  
   watchGeo = navigator.geolocation.watchPosition(geoWin, geoFail, opt);
 }
 
