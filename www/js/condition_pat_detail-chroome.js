@@ -80,8 +80,8 @@ for(a=0;a<patient_detaias_array.length;a++){
 
 
 
-var lat_hosp ='13.0845423';
-var long_hosp ='80.2131677';
+var lat_hosp ='13.13';
+var long_hosp ='80.13';
 
 
   $.ajax({

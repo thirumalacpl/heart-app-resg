@@ -33,11 +33,7 @@ var activities_de_categoryid = activities_de.category_id;
 
 }
 
-/*$(".chatSendBut_qua").click(function(){
-var element = $(this);
-var img_id = element.attr("id");
-alert(img_id+'img_id');
-});*/
+
 $(document).off('click', '#chatSendBut_qu').on('click', '#chatSendBut_qu', function() { 
 //alert('chat chatSendBut_qu    asdf');
 
