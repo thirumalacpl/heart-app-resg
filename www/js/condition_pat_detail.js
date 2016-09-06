@@ -65,7 +65,7 @@ var formData = $("#callAjaxForm").serialize();
     function onSuccessfg(data){
 alert('onSuccessfg       ggggggg');
 
-startGeoWatch();
+
 
 //sessionStorage.setItem("patient_detaias_array",JSON.stringify(result[0]));
 sessionStorage.setItem("patient_detaias_array",JSON.stringify(data));
@@ -79,31 +79,8 @@ for(a=0;a<patient_detaias_array.length;a++){
 
 //alert('asdkjfgksdafjidkaisf');
 //alert(navigator.geolocation+'navigator.geolocation');
-function onDeviceReady() {
-  alert('s');
-  document.addEventListener("pause", onPause, false);
-  document.addEventListener("resume", onResume, false);
-  startGeoWatch();
-}
 
-function geoWin(pos) {
-  //d("geoWin(): "+pos.coords.latitude+", "+pos.coords.longitude);
-  alert("geoWin(): "+pos.coords.latitude+", "+pos.coords.longitude)
-}
 
-function geoFail(error) {
-  //d("geoFail(): "+error.code+": "+error.message);
-  alert("geoFail(): "+error.code+":" +error.message);
-}
-
-function startGeoWatch() {
-
-  opt = {timeout: 1000, enableHighAccuracy: true};
-
-  watchGeo = navigator.geolocation.watchPosition(geoWin, geoFail, opt);
-}
-
-var watchGeo=null;
 
    navigator.geolocation.getCurrentPosition(onSuccess, onError);  
 
@@ -138,6 +115,31 @@ var long_hosp ='234';*/
         alert('code: '    + error.code    + '\n' +
               'message: ' + error.message + '\n');
     }
+startGeoWatch();
+function onDeviceReady() {
+  alert('s');
+  document.addEventListener("pause", onPause, false);
+  document.addEventListener("resume", onResume, false);
+  startGeoWatch();
+}
+
+function geoWin(pos) {
+  //d("geoWin(): "+pos.coords.latitude+", "+pos.coords.longitude);
+  alert("geoWin(): "+pos.coords.latitude+", "+pos.coords.longitude)
+}
+
+function geoFail(error) {
+  //d("geoFail(): "+error.code+": "+error.message);
+  alert("geoFail(): "+error.code+":" +error.message);
+}
+
+function startGeoWatch() {
+
+  opt = {timeout: 1000, enableHighAccuracy: true};
+
+  watchGeo = navigator.geolocation.watchPosition(geoWin, geoFail, opt);
+}
+
 
        function onSuccesspatid(data){
 //alert('Submitted Successfully');
