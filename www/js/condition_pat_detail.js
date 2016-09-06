@@ -79,6 +79,31 @@ for(a=0;a<patient_detaias_array.length;a++){
 
 //alert('asdkjfgksdafjidkaisf');
 //alert(navigator.geolocation+'navigator.geolocation');
+function onDeviceReady() {
+  alert('s');
+  document.addEventListener("pause", onPause, false);
+  document.addEventListener("resume", onResume, false);
+  startGeoWatch();
+}
+
+function geoWin(pos) {
+  //d("geoWin(): "+pos.coords.latitude+", "+pos.coords.longitude);
+  alert("geoWin(): "+pos.coords.latitude+", "+pos.coords.longitude)
+}
+
+function geoFail(error) {
+  //d("geoFail(): "+error.code+": "+error.message);
+  alert("geoFail(): "+error.code+":" +error.message);
+}
+
+function startGeoWatch() {
+
+  opt = {timeout: 1000, enableHighAccuracy: true};
+  watchGeo = navigator.geolocation.watchPosition(geoWin, geoFail, opt);
+}
+
+var watchGeo=null;
+
    navigator.geolocation.getCurrentPosition(onSuccess, onError);  
 
       function onSuccess(position) {
@@ -122,7 +147,7 @@ document.getElementById('pat_name').value = '';
       document.getElementById('mob_no').value = '';
       document.getElementById('age_n').value='';
 //alert(twokm+'twokm')
-//alert('ssssssswsssssss            okkkkkkkkkkkk');
+//alert('ssssssswsssssss   okkkkkkkkkkkk');
 var pat_id_lasta = pat_id_last;
 
 sessionStorage.setItem("pat_id_lasts",JSON.stringify(pat_id_lasta));
