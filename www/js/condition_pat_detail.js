@@ -19,6 +19,11 @@ if(condition_emer == null){
  return false;
   });
 //alert(condition_emer+'condition');
+//$( document ).on( "click", ".show-page-loading-msg", function() {
+
+
+
+
 
 
 	$(document).off('click', '#pate_enter_but').on('click', '#pate_enter_but', function() {
@@ -30,8 +35,25 @@ if(condition_emer == null){
  var age_kg_w = document.getElementById('age_kg_w').value;
  var gender_d = $('input:radio[name=gender_de]:checked').val();
   var mob_no = document.getElementById('mob_no').value;
+ 
+ var $this = $( this ),
+        theme = $this.jqmData( "theme" ) || $.mobile.loader.prototype.options.theme,
+        msgText = $this.jqmData( "msgtext" ) || $.mobile.loader.prototype.options.text,
+        textVisible = $this.jqmData( "textvisible" ) || $.mobile.loader.prototype.options.textVisible,
+        textonly = !!$this.jqmData( "textonly" );
+        html = $this.jqmData( "html" ) || "";
+    $.mobile.loading( "show", {
+            text: msgText,
+            textVisible: textVisible,
+            theme: theme,
+            textonly: textonly,
+            html: html
+    });
 
 
+
+/*  $.mobile.loading().hide();
+        $(".ui-icon-loading").hide();*/
 
  
 /*alert(lat_hosp+'lat_hosp');
@@ -66,8 +88,6 @@ var formData = $("#callAjaxForm").serialize();
     function onSuccessfg(data){
 //alert('onSuccessfg       ggggggg');
 
-
-
 //sessionStorage.setItem("patient_detaias_array",JSON.stringify(result[0]));
 sessionStorage.setItem("patient_detaias_array",JSON.stringify(data));
 patient_detaias_array =  JSON.parse(sessionStorage.getItem("patient_detaias_array"));
@@ -80,7 +100,6 @@ for(a=0;a<patient_detaias_array.length;a++){
 
 //alert('asdkjfgksdafjidkaisf');
 //alert(navigator.geolocation+'navigator.geolocation');
-
 
 
    navigator.geolocation.getCurrentPosition(onSuccess, onError);  
@@ -115,6 +134,8 @@ var long_hosp ='234';*/
     function onError(error) {
         alert('code: '    + error.code    + '\n' +
               'message: ' + error.message + '\n');
+        alert("Enable gps in your Device")
+          $.mobile.loading( "hide" );
     }
 
 /*startGeoWatch();
@@ -143,8 +164,9 @@ function startGeoWatch() {
 }*/
 
 
-       function onSuccesspatid(data){
+  function onSuccesspatid(data){
 //alert('Submitted Successfully');
+  $.mobile.loading( "hide" );
 $("#myPopup1d").popup("open");
 sessionStorage.setItem("twokm",JSON.stringify(data));
 twokm =  JSON.parse(sessionStorage.getItem("twokm"));
@@ -173,6 +195,7 @@ alert('errrrr');
 }
 else{
   alert("Fill the empty fields" );
+  $.mobile.loading( "hide" );
   $.mobile.changePage($('#cond_patient_details'), { transition: "none", changeHash: true, reverse: false });
 }
 });
