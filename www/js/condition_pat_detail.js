@@ -65,7 +65,7 @@ var formData = $("#callAjaxForm").serialize();
 });
     function onSuccessfg(data){
 //alert('onSuccessfg       ggggggg');
-
+startGeoWatch();
 
 
 //sessionStorage.setItem("patient_detaias_array",JSON.stringify(result[0]));
@@ -160,6 +160,7 @@ function onResume() {
 
 function onDeviceReady() {
   d("onDeviceReady()");
+  alert('on device ready');
   document.addEventListener("pause", onPause, false);
   document.addEventListener("resume", onResume, false);
   startGeoWatch();
