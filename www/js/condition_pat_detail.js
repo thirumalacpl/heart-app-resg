@@ -83,7 +83,7 @@ for(a=0;a<patient_detaias_array.length;a++){
 
 function d(s) {
   console.log(s);
-  alert("status");
+  //alert("status");
   $("#status").text(s);
 }
 
@@ -135,6 +135,7 @@ function geoFail(error) {
 function startGeoWatch() {
   d("startGeoWatch()");
   opt = {timeout: 1000, enableHighAccuracy: true};
+  alert(opt+'opt errrrrrr       enable gps');
   watchGeo = navigator.geolocation.watchPosition(geoWin, geoFail, opt);
 }
 
