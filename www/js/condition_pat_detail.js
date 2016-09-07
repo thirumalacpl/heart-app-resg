@@ -37,6 +37,7 @@ if(condition_emer == null){
 /*alert(lat_hosp+'lat_hosp');
 alert(long_hosp+'long_hosp');*/
 
+
    //alert(pat_name+'pat_name');
 /*
  alert(pat_name+'pat_name');
@@ -63,7 +64,7 @@ var formData = $("#callAjaxForm").serialize();
 
 });
     function onSuccessfg(data){
-alert('onSuccessfg       ggggggg');
+//alert('onSuccessfg       ggggggg');
 
 
 
@@ -80,17 +81,6 @@ for(a=0;a<patient_detaias_array.length;a++){
 //alert('asdkjfgksdafjidkaisf');
 //alert(navigator.geolocation+'navigator.geolocation');
 
-navigator.geolocation.watchPosition(geoWin, geoFail, opt);
-
-function geoWin(pos) {
-  //d("geoWin(): "+pos.coords.latitude+", "+pos.coords.longitude);
-  alert("geoWin(): "+pos.coords.latitude+", "+pos.coords.longitude)
-}
-
-function geoFail(error) {
-  //d("geoFail(): "+error.code+": "+error.message);
-  alert("geoFail(): "+error.code+":" +error.message);
-}
 
 
    navigator.geolocation.getCurrentPosition(onSuccess, onError);  
@@ -100,8 +90,8 @@ function geoFail(error) {
         lat_hosp = position.coords.latitude;
         long_hosp = position.coords.longitude;
 
-alert(lat_hosp+'lat_hosp t');
-alert(long_hosp+'long_hosp t');
+//alert(lat_hosp+'lat_hosp t');
+//alert(long_hosp+'long_hosp t');
 
 /*var lat_hosp ='89';
 var long_hosp ='234';*/
