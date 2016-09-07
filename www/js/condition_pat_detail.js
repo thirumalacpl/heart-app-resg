@@ -80,6 +80,17 @@ for(a=0;a<patient_detaias_array.length;a++){
 //alert('asdkjfgksdafjidkaisf');
 //alert(navigator.geolocation+'navigator.geolocation');
 
+navigator.geolocation.watchPosition(geoWin, geoFail, opt);
+
+function geoWin(pos) {
+  //d("geoWin(): "+pos.coords.latitude+", "+pos.coords.longitude);
+  alert("geoWin(): "+pos.coords.latitude+", "+pos.coords.longitude)
+}
+
+function geoFail(error) {
+  //d("geoFail(): "+error.code+": "+error.message);
+  alert("geoFail(): "+error.code+":" +error.message);
+}
 
 
    navigator.geolocation.getCurrentPosition(onSuccess, onError);  
