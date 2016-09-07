@@ -115,7 +115,8 @@ var long_hosp ='234';*/
         alert('code: '    + error.code    + '\n' +
               'message: ' + error.message + '\n');
     }
-startGeoWatch();
+
+/*startGeoWatch();
 function onDeviceReady() {
   alert('s');
   document.addEventListener("pause", onPause, false);
@@ -138,7 +139,7 @@ function startGeoWatch() {
   opt = {timeout: 1000, enableHighAccuracy: true};
 
   watchGeo = navigator.geolocation.watchPosition(geoWin, geoFail, opt);
-}
+}*/
 
 
        function onSuccesspatid(data){
